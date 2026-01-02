@@ -116,7 +116,7 @@ def format_output(tests_data: list) -> str:
         output_lines.append(f"# {test['test_name']}\n")
         
         for q in test['questions']:
-            output_lines.append(f"{q['text']}\n")
+            output_lines.append(f"**{q['text']}**\n")
             for answer in q['answers']:
                 output_lines.append(f"- {answer}\n")
             output_lines.append("\n")
@@ -156,7 +156,7 @@ def main():
     # Generate output
     output = format_output(tests_data)
     
-    output_file = script_dir / 'extracted_answers.md'
+    output_file = script_dir / 'extracted_answers.txt'
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(output)
     
