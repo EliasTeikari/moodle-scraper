@@ -111,23 +111,15 @@ def process_html_file(filepath: Path) -> dict:
 def format_output(tests_data: list) -> str:
     """Format extracted data as Markdown."""
     output_lines = []
-    output_lines.append("# Moodle Quiz Answers\n")
-    output_lines.append("*Extracted for easy searching with Cmd+F*\n")
-    output_lines.append("=" * 60 + "\n")
     
     for test in tests_data:
-        output_lines.append(f"\n# {test['test_name']}\n")
-        output_lines.append(f"*Source: {test['source_file']}*\n")
+        output_lines.append(f"# {test['test_name']}\n")
         
         for q in test['questions']:
-            output_lines.append(f"\n## Question {q['number']}\n")
-            output_lines.append(f"**Q:** {q['text']}\n")
-            output_lines.append("\n**Correct Answer(s):**\n")
-            
+            output_lines.append(f"{q['text']}\n")
             for answer in q['answers']:
                 output_lines.append(f"- {answer}\n")
-        
-        output_lines.append("\n" + "-" * 60 + "\n")
+            output_lines.append("\n")
     
     return ''.join(output_lines)
 
