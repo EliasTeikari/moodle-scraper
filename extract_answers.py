@@ -71,9 +71,11 @@ def extract_questions(soup: BeautifulSoup) -> list:
                 for p in answer_paragraphs:
                     answer_text = clean_text(p.get_text())
                     if answer_text:
-                        # Remove trailing comma or period
+                        # Remove leading/trailing comma or period
+                        answer_text = re.sub(r'^[,\.\s]+', '', answer_text)
                         answer_text = re.sub(r'[,\.]\s*$', '', answer_text)
-                        answers.append(answer_text)
+                        if answer_text:  # Only add if still has content
+                            answers.append(answer_text)
                 question_data['answers'] = answers
             else:
                 # Fallback: get all text from rightanswer
@@ -109,16 +111,19 @@ def process_html_file(filepath: Path) -> dict:
 
 
 def format_output(tests_data: list) -> str:
-    """Format extracted data as Markdown."""
+    """Format extracted data as plain text."""
     output_lines = []
     
     for test in tests_data:
-        output_lines.append(f"# {test['test_name']}\n")
+        output_lines.append(f"{test['test_name']}\n\n")
         
         for q in test['questions']:
-            output_lines.append(f"**{q['text']}**\n")
+            output_lines.append(f"{q['text']}\n")
             for answer in q['answers']:
-                output_lines.append(f"- {answer}\n")
+                # Clean up answer - remove leading commas/spaces
+                answer = re.sub(r'^[,\.\s]+', '', answer).strip()
+                if answer:  # Only add non-empty answers
+                    output_lines.append(f"- {answer}\n")
             output_lines.append("\n")
     
     return ''.join(output_lines)
