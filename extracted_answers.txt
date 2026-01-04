@@ -2469,3 +2469,32 @@ Kaaluge teavet mälu ülekatte kohta; kasutage loenguslaide ja ka järgmist kokk
 - DOS kasutas ülekatete strateegiat, et võidelda väikeste mäluvahemikega
 
 
+Test 2 - operatsioonisüsteemide sissejuhatus jätk
+
+Valige, kas mõiste või kirjeldus sobib kõrge või madala taseme liidese kirjeldamiseks.
+- Faili tasemel andmete salvestamine kõvakettale → kõrgetasemeline
+- API on loodud selleks, et programmeerija saaks kirjutada koodi lühema ajaga ja olla vähem seotud nõutavaid teenuseid osutava tarkvaramooduli või riistvaraseadme detailidega. → kõrgetasemeline
+- bititasemel programmeerimine → madalatasemeline
+- Protsesside vaheline toru (ik. pipe) → kõrgetasemeline, blokkide tasemel kõvakettale kirjutamine → madalatasemeline
+- Programmeerimisliides (API), mis on kõige üksikasjalikum, võimaldades programmeerijal tarkvaramooduli või riistvara funktsioone väga detailsel tasemel manipuleerida. → madalatasemeline
+
+Millisele operatsioonisüsteemi kihile paigutaksite kasutaja paigaldatud pildivaaturi IrfanView?
+- Rakendused
+
+Vali, mis kümnendil operatsioonisüsteem arendati või millise kümnendi kohta kirjeldus (mõiste) käib.(Käesolev küsimus annab topeltpunktid)
+- Unix loomine → 196x
+- SunOS → 198x
+- BSD → 197x, Linux → 199x
+- Android → 2000+
+- "operatsioonisüsteemi" kontseptsiooni kujunemine → 195x
+- Multics → 196x
+- GNU projekt → 198x
+
+Test 8 - Mäluhalduse loeng
+
+Kaaluge teavet mälu ülekatte kohta; kasutage loenguslaide ja ka järgmist kokkuvõtet lektori jutust:Ülekate (Overlay)Rakendus hoiab mälus ainult osa programmist ja andmetest, mida hetkel on vaja.Kasutatakse siis, kui programm kokku on suurem kui talle antud mälu. Operatsioonisüsteemi tuge pole vaja; realiseeritav kasutaja tasemel.Näide: DOS ja suured programmidMälupiirangud, täpsemalt 640 KB tavamälu limiit.Võimaldab programmide suurust ületada olemasolevat mälu, jagades need väiksemateks osadeks, mida nimetatakse ülekateteks.Vajalikud ülekatted laaditakse käitamise ajal mällu, vahetades need vastavalt vajadusele sisse ja välja.DOS-ile Oma MäärangDOS-is (Disk Operating System) olid ülekatted eriti olulised just 640 KB tavamälu piirangu tõttu. Operatsioonisüsteem ise ei pakkunud ülekatete jaoks otsest tuge; see oli programmeerija või kompilaatori ülesanne neid hallata.Ülekate Haldus: Programmeerijad kasutasid erilisi ülekate haldureid või koodisid ülekatete haldamise rutiine käsitsi.Faili Salvestamine: Ülekatted salvestati sageli eraldi failides või kindlates segmentides täidetavas failis.Dünaamiline Laadimine: Kui teatud osa programmist oli vajalik, laaditi vastav ülekanne etteantud mälualale, asendades mis iganes seal enne oli.Käsitsi Ümberlülitus: Programmeerijal tuli hoolikalt hallata, millal iga ülekate laadida ja maha laadida, sõltuvalt programmi loogikast ja voolust.Katkestused ja Käsitlejad: Oli oluline tagada, et katkestuste käsitlejad ja muu aegkriitiline kood ei asuks ülekatetes, kuna laadimisajad võiksid mõjutada jõudlust.Ketta I/O: Arvestades, et ülekatted laaditi sageli kettalt, olid programmid, mis neid kasutasid, tundlikud ketta kiiruse suhtes. Ketta vahemälu võis seda leevendada.Puudused: Ülekatete kasutamine muutis programmid keerukamaks ja raskemini silutavaks. Samuti tegi see need sõltuvaks korrektselt rakendatud ülekate mehhanismist, olgu see siis kompilaatori või programmeerija poolt manuaalselt rakendatud.Valige õiged väited:
+- Ülekates võib üks programmi osa mällu sattuda ainult siis, kui seda konkreetset osa on vaja.
+- Ülekateid kasutades on võimalik luua programme, mis on suuremad kui mälu, mis neile eraldatud on.
+- Mällu laaditavad ülekate osad võivad sõltuda programmi jooksutamise ajal toimuvast.
+- DOS kasutas ülekatete strateegiat, et võidelda väikeste mäluvahemikega
+
