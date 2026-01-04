@@ -1281,7 +1281,7 @@ Valige failisüsteemide kohta õiged väited:
 - Mitte-RAM-disk Live ISO alglaaditav OS ei saa töötada ilma USB-, CD-, DVD- või võrguta.
 - RAM-ketta Live OS saab pärast käivitamist ilma salvestusmeediumita jätkata
 
-Millised väited kirjeldavad täpselt testimis- ja arenduskeskkondade eeliseid virtuaalmasinates või konteinerites?
+ testimis- ja arenduskeskkondade eeliseid virtuaalmasinates või konteinerites?
 - Võimaldab kiirelt luua identseid katsekeskkondi erinevatele projektidele., Virtuaalsed snapshot’id (või konteinerite pildid) teevad oleku salvestamise lihtsaks., VM-is või konteineris katsetamine vähendab riski, et hostmasina opsüsteem rikutakse., Korduvkasutatavad pildid (images) aitavad standardida keskkonnaseadeid.
 
 2025OS Eksamiks valmistamise test: Katsete ülevaade (leht 4/10)
@@ -2193,6 +2193,137 @@ Kaaluge teavet mälu ülekatte kohta; kasutage loenguslaide ja ka järgmist kokk
 - DOS-i operatsioonisüsteemis on ülekatel oluline roll mälu piirangute tõttu.
 - Ülekates saab osasid programme dünaamiliselt asendada teistega.
 - Kui ülekatte strateegia on kehvasti teostatud, võib see süsteemi jõudlust oluliselt kahjustada
+
+Test 2 - operatsioonisüsteemide sissejuhatus jätk
+
+Keda peetakse "arvuti isaks" (esimese tõelise digitaalse arvuti kontseptsiooni arendajaks)? Piisab perenimest. NB! Kontrollige õigekirja.
+- Babbage
+
+Valige, kas mõiste või kirjeldus sobib kõrge või madala taseme liidese kirjeldamiseks.
+- "kohutav liides" → madalatasemeline
+- riistvara → madalatasemeline
+- "ilus liides" → kõrgetasemeline
+- Rakendusprogrammid → kõrgetasemeline
+
+Millisele operatsioonisüsteemi kihile paigutaksite kasutaja paigaldatud tekstiredaktori Word?
+- Rakendused
+
+Valige jäegmisest nimekirjast õiged väided operatsioonisüsteemi kohta:
+- Operatsioonisüsteem haldab nii sisend- kui väljundseadmeid, nagu hiir, klaviatuur ja monitor.
+- Üks operatsioonisüsteemi ülesandeid on eraldada erinevad programmid, et need ei mõjutaks üksteise tööd.
+- Operatsioonisüsteem pakub programmidele abstraktset keskkonda, et lihtsustada nende juurdepääsu riistvarale.
+- Operatsioonisüsteem aitab vältida ressursside konflikte, hallates neid keskendatult ja kontrollitult
+
+Test 3 - Linux käsurea meelespea
+
+Loengu 003 slaidide põhjal (käsurea käsud); live linux või Ubuntu VM abil, kasutades man <cmd> selleks et saada käsu kohta rohkem info (nt. man ls); kasutades <cmd> -h ja <cmd> --help selleks et saada käsu võtmete/parameetrite kasutusjuhendi ( siin <cmd> on linuxi bash käsurea käsk ).Millised järgnevatest väidetest käsu kill ja selle valikute kohta on õiged?
+- kill -9 1234 saadab protsessile ID-ga (PID) 1234 SIGKILL signaali, mis lõpetab protsessi viivitamatult.
+- kill -SIGTERM 5678 saadab protsessile ID-ga 5678 SIGTERM signaali, paludes protsessil lõpetada viisakalt.
+- kill -l kuvab kõik võimalikud signaalid, mida saab kill käsuga saata.
+- kill 4321 saadab protsessile ID-ga 4321 vaikimisi SIGTERM signaali
+
+Loengu 003 slaidide põhjal (käsurea käsud); live linux või Ubuntu VM abil, kasutades man <cmd> selleks et saada käsu kohta rohkem info (nt. man ls); kasutades <cmd> -h ja <cmd> --help selleks et saada käsu võtmete/parameetrite kasutusjuhendi ( siin <cmd> on linuxi bash käsurea käsk ).Millised järgnevatest väidetest käsu df ja selle valikute kohta on õiged?
+- df -h kuvab kettaruumi kasutuse inimloetavas vormingus (nt MB, GB).
+- df /home näitab kataloogi /home failisüsteemi kettaruumi kasutust (kilobytes)
+- df -i kuvab inodeside kasutuse iga failisüsteemi kohta.
+- df --total kuvab kokkuvõtte kogu süsteemi kettaruumi kasutuse kohta
+
+Loengu 003 slaidide põhjal (käsurea käsud); live linux või Ubuntu VM abil, kasutades man <cmd> selleks et saada käsu kohta rohkem info (nt. man ls); kasutades <cmd> -h ja <cmd> --help selleks et saada käsu võtmete/parameetrite kasutusjuhendi ( siin <cmd> on linuxi bash käsurea käsk ).Millised järgnevatest väidetest käsu apt ja selle valikute kohta on õiged?
+- apt update uuendab hoidlate pakettide loendi kohalikku vahemälu.
+- apt install package-name paigaldab määratud tarkvarapaketi koos selle sõltuvustega.
+- apt remove package-name eemaldab tarkvarapaketi, säilitades siiski konfiguratsioonifailid.
+- apt upgrade uuendab kõik süsteemis olevad pakettide versioonid, mis on praeguste hoidlate põhjal saadaval
+
+Loengu 003 slaidide põhjal (käsurea käsud); live linux või Ubuntu VM abil, kasutades man <cmd> selleks et saada käsu kohta rohkem info (nt. man ls); kasutades <cmd> -h ja <cmd> --help selleks et saada käsu võtmete/parameetrite kasutusjuhendi ( siin <cmd> on linuxi bash käsurea käsk ).Millised järgnevatest väidetest käsu ssh ja selle valikute kohta on õiged?
+- ssh user@remote.server.com loob SSH-ühenduse kasutajaga user serverisse remote.server.com.
+- ssh -p 2222 user@remote.server.com kasutab ühenduse loomiseks SSH-pordi 2222 asemel vaikimisi porti 22.
+- ssh -i /path/to/private_key.pem user@remote.server.com kasutab määratud privaatvõtme faili private_key.pem autentimiseks.
+- ssh -L 8080:localhost:80 user@remote.server.com suunab kohalikult porti 8080 edasi kaugsüsteemi localhost pordile 80 üle SSH-tunneli
+
+Loengu 003 slaidide põhjal (käsurea käsud); live linux või Ubuntu VM abil, kasutades man <cmd> selleks et saada käsu kohta rohkem info (nt. man ls); kasutades <cmd> -h ja <cmd> --help selleks et saada käsu võtmete/parameetrite kasutusjuhendi ( siin <cmd> on linuxi bash käsurea käsk ).Millised järgnevatest väidetest käsu curl ja selle valikute kohta on õiged?
+- curl -o file.txt http://example.com salvestab allalaaditud sisu aadressilt http://example.com failinimega file.txt.
+- curl -I http://example.com kuvab HTTP päise teabe ilma tegelikku sisu allalaadimata.
+- curl -u user:password http://example.com kasutab autentimiseks HTTP baaskasutajanime ja parooli.
+- curl -L http://example.com järgib HTTP ümbersuunamisi, kui http://example.com suunab teisele URL-ile
+
+Loengu 003 slaidide põhjal (käsurea käsud); live linux või Ubuntu VM abil, kasutades man <cmd> selleks et saada käsu kohta rohkem info (nt. man ls); kasutades <cmd> -h ja <cmd> --help selleks et saada käsu võtmete/parameetrite kasutusjuhendi ( siin <cmd> on linuxi bash käsurea käsk ).Millised järgnevatest väidetest käsu du ja selle valikute kohta on õiged?
+- du -h /home/user kuvab kataloogi /home/user kettakasutuse inimloetavas formaadis (nt KB, MB, GB).
+- du -s /var/log näitab ainult kataloogi /var/log kogumahtu.
+- du -a /home/user kuvab nii failide kui ka kataloogide suurust /home/user kataloogis.
+- du --max-depth=1 /home kuvab ainult iga alamkataloogi suuruse /home kataloogi all, kuid ei süvene edasi
+
+Test 5 - Protsessid ja lõimed (jätk)
+
+Palun vali õiged väited protsesside ja lõimede kohta.
+- Protsessi juhtplokk (PCB) sisaldab teavet protsessi kohta, sealhulgas selle olekut ja mäluhaldust.
+- UNIX-põhistes süsteemides saab uue protsessi luua fork() süsteemikutse abil.
+- Sama protsessi lõimed jagavad sama aadressiruumi, kuid neil on eraldi virnad.
+- Kontekstivahetus hõlmab praegu töötava protsessi oleku salvestamist ja järgmise täitmisele valitud protsessi oleku laadimist
+
+Palun vali õiged väited protsesside ja lõimede kohta.
+- Protsessi olek võib olla "ootel", kui protsess ootab mõne sündmuse, näiteks I/O operatsiooni lõppu.
+- Üks lõimega protsessid vajavad vähem süsteemihaldust kui mitmelõimelised protsessid, sest need ei pea haldama mitut täitmisjärge.
+- Protsessi ja lõime erinevus seisneb selles, et lõimed jagavad sama protsessi ressursse, samas kui protsessid on iseseisvad ja eraldatud.
+- Protsessidevahelise suhtluse (IPC) vahendid, nagu torud või jagatud mälu, võimaldavad protsessidel andmeid jagada ja sünkroonida
+
+Palun vali õiged väited protsesside ja lõimede kohta.
+- Mitmelõimelises protsessis saavad lõimed samaaegselt täita erinevaid ülesandeid.
+- Protsessi lõpetamisel vabastab operatsioonisüsteem automaatselt kõik sellega seotud ressursid.
+- Lõimed sama protsessi sees jagavad samu andmestruktuure ja ressursse, mis teeb lõimedevahelise suhtluse kiiremaks.
+- Kasutajatase lõimed on operatsioonisüsteemile nähtamatud ja neid hallatakse rakenduse sees
+
+Palun vali õiged väited protsesside ja lõimede kohta.
+- Linux käsitleb lõimesid kui light-weight processes (LWP), kus iga lõimil on oma thread ID, kuid lõimed jagavad sama process ID.
+- Windows toetab üks-ühele thread mudelit, kus igale kasutajalõimele vastab üks tuumalõim.
+- POSIX Threads (Pthreads) on standardne lõimemudel, mis toetab lõimede loomist ja haldamist UNIX-põhistes operatsioonisüsteemides.
+- Solaris toetab mitu-mitmele (many-to-many) lõimemudelit, kus mitu kasutajalõime on seotud mitme tuumalõimega
+
+Test 7 - Salvestusseadmete loeng
+
+Loengu slaidid 8-11, ning lisamaterjalValige õiged väited:
+- HDD-d on odavamad kui SSD-d, pakkudes paremat hinda gigabaidi (GB) kohta
+- SSD-d pakuvad oluliselt suuremaid lugemis-/kirjutamiskiirusi võrreldes HDD-dega, tipptasemel lugemis-/kirjutamiskiirused on 3000 - 7000MB/s SSD-de jaoks ja 250MB/s HDD-de jaoks​
+- HDD-de maksimaalne mahutavus on suurem kui SSD-del, HDD võib mahutada kuni 22TB ja SSD kuni 4TB andmeid​
+- SSD-d on vaiksemad kui HDD-d, kuna neil puuduvad liikuvad osad
+
+Kaaluge järgmist ketta pöörduste planeerimise kokkuvõtet:Operatsioonisüsteem on vastutav kettapöörduste optimeerimise eest, et suurendada läbilaskevõimet ja vähendada viivitust.Kaks olulist tegurit pöördusajal:Otsimisaeg: Aeg, mis kulub sõltuvalt sellest, kui kaugele pead tuleb liigutada soovitud raja jõudmiseks.Pöörlemisviivitus: Aeg, mis kulub soovitud kettasektori viimiseks lugemis-/kirjutuspea alla, keskmiselt pool pööret.Maksimaalne läbilaskevõime sõltub kettaseadmest.Operatsioonisüsteem soovib vähendada liigset positsioneerimist, et läbilaskevõime oleks maksimumi lähedal.Kui meil on ketta järjekorras kogunenud päringud teatud sektoritele, millises järjekorras neid teenindada, et viivitus (lugemispea poolt läbitud vahemaa) oleks võimalikult väike?Klassikalised Ketta Pöörduste Planeerimise AlgoritmidFCFS (First Come First Served): Päringud teenindatakse vastavalt saabumise järjekorrale.SSTF (Shortest Seek Time First): Sarnane SJF (Shortest Job Next) protsessiplaneerijaga, kuid pole optimaalne, kuna võib põhjustada näljutamist.SCAN (tuntud ka kui elevaatorialgoritm): Pea liigub ketta ühest äärest teise, teenindades tee peal olevaid päringuid.LOOK: Pea liigub ainult kuni kaugema päringuni igas suunas, mitte ketta ääreni. Keskmised sektorid teenindatakse kiiremini.C-SCAN: Sarnane SCAN-iga, kuid tagasiteel päringuid ei teenindata.C-LOOK: Sarnane LOOK-iga, kuid pea liigub ainult kuni kaugema päringuni, mitte ketta ääreni. Päringute teenindamise ooteajad on ühtlasemad.Ketta Pöörduste Planeerimise Algoritmid LinuxisNOOP: Lihtsalt ühendab päringud.Deadline: Määrab prioriteediklassid vastavalt interaktiivsusele, võideldes näljutamise vastu tähtaegadega.CFQ (Completely Fair Queuing): Päringud jagatakse klassidesse ja võetakse klassidest vaheldumisi; suudab arvestada I/O prioriteetidega.Mitme Järjekorra Variandid: MQ-Deadline, Kyber, BFQ - käitlevad mitut järjekorda.Olenemata operatsioonisüsteemist: Mitme järjekorrahalduse kasutamine üksteise otsas võib protsessi hoopis aeglustada.Valige õiged väited:
+- Kyber on üks Linuxi kettapöörduste planeerimise algoritmidest, mis toetab mitme järjekorra haldamist.
+- Läbilaskevõime suurendamine ja viivituse vähendamine on kettapöörduste planeerimise peamised eesmärgid.
+- LOOK-algoritm ja C-LOOK-algoritm on optimeeritud keskel asuvate sektorite kiiremaks teenindamiseks.
+- C-SCAN-algoritm teenindab päringuid ainult edasisuunas, mitte tagasiteel
+
+Kaaluge järgmist ketta ette valmistamise kokkuvõtet:Madala taseme formaatimine, mida tuntakse ka füüsilise formaatimisena, viitab ketta radade sektorite märkimise protsessile. Seda protsessi viib tavaliselt läbi ketaste tootja ja tavaliselt ei ole see operatsioonisüsteemile nähtav. See loob ketta baasandmestruktuurid, muutes selle kõrgema taseme formaatimiseks valmis. Partitsioneerimine:Partitsioneerimine hõlmab ketta jagamist mitmeks loogiliseks sektsiooniks ehk partitsioonideks, mida saab sõltumatult hallata. MBR (Master Boot Record) partitsioonitabelid asuvad ketta alguses ja saavad adresseerida kuni 2TB salvestusruumi. GPT (GUID Partition Table) on mõeldud suuremate kui 2TB ketaste jaoks ja partitsioonitabel asub ketta lõpus​1​. Loogiline formaatimine:Loogiline formaatimine, mida tuntakse ka failisüsteemi loomisena, hõlmab failisüsteemi struktuuri seadistamist partitsioonis või kettal, mis hõlmab vajalike andmestruktuuride loomist failide salvestamiseks ja hankimiseks. Bootloaderi paigaldamine:Bootloaderid on olulised komponendid, mis aitavad operatsioonisüsteemi käivitada. Need paigaldatakse süsteemi reserveeritud partitsiooni ja need leiavad ning laadivad operatsioonisüsteemi tuuma mällu. Bootloaderi paigaldamine hõlmab tavaliselt sihtketta ja partitsiooni valimist ning bootloaderi koodi määratud asukoha (MBR, bootsector, ESP partitsioon) paigaldamist.Valige õiged väited:
+- MBR partitsioonitabelid on asukohas ketta alguses.
+- GPT partitsioonitabel on mõeldud suuremate kui 2TB ketaste jaoks.
+- Loogiline formaatimine hõlmab failisüsteemi struktuuri seadistamist partitsioonis või kettal.
+- Bootloaderi paigaldamine hõlmab operatsioonisüsteemi tuuma mällu laadimist
+
+Kaaluge järgmist saalimisala haldamise kokkuvõtet:Erinevate operatsioonisüsteemide vahetusala haldamine hõlmab ketta ruumi kasutamist virtuaalse mälu jaoks, et täiendada füüsilist RAM-i, kui see muutub napiks. Siin on lõhkuva lõigu ja täiendavate detailide põhjal esitatud ülevaade:Linux:Vahetushaldus leevendab mälu nälga, vahetades mittekriitilisi mälu blokke kettale ja tagasi nõudmisel. Selleks otstarbeks saab kasutada vahetuse partitsiooni või vahetusfaili, kusjuures vahetuse partitsioon on kiirem, kuid suuruse kohandamisel vähem paindlik võrreldes vahetusfailidega​​.Iga vahetusala Linuxis koosneb 4-KB lehekülje pesadest vahetatavate lehekülgede hoidmiseks, mis on seotud vahetuskaardiga, täisarvuliste loendurite massiiviga, mis vastavad igale lehekülje pesale​.Vahetusruumi kasutatakse siis, kui füüsiline RAM on täis, liigutades mitteaktiivseid lehekülgi vahetusruumi. See on kasulik piiratud RAM-iga masinate jaoks, kuid see ei asenda täiendavat RAM-i​.Windows:Windows kasutab virtuaalse mälu haldamiseks vahetusfaili, mida tuntakse nimega pagefile.sys. Vahetusfaili suurust saab süsteemi poolt automaatselt hallata või kasutaja poolt käsitsi kohandada, et lahendada jõudlusprobleeme​.Vahetusfaili jaoks on soovitatav fikseeritud vaikesuurus automaatse suuruse haldamise asemel, et vältida jõudluse halvenemist töötamise ajal. Järelevalvevahendid aitavad jälgida füüsilist mälu, vahetusfaili suurust ja kasutamist, et vahetusruumi tõhusalt hallata​.Valige õiged väited:
+- Linuxis saab vahetushalduse jaoks kasutada vahetuse partitsiooni või vahetusfaili.
+- Vahetusruumi kasutatakse siis, kui füüsilist RAM-i on täis.
+- Windowsi virtuaalse mälu haldamiseks kasutatakse faili nimega pagefile.sys.
+- Windowsis saab kasutaja käsitsi kohandada vahetusfaili suurust, et lahendada jõudlusprobleeme
+
+Mõelge illustratsioonile, milline raid see on?
+- RAID1
+
+Kaaluge järgmist LVM kokkuvõtet:LVM (Logical Volume Management - Loogiline Köite Haldus) on kaasaegse salvestushalduse oluline aspekt, mis võimaldab salvestusressursside paindlikumat ja tõhusamat kasutamist. Lähtuvalt lõigust LVM-i kohta, siin on mõned olulised punktid:Abstraktsioon: LVM abstraktseb süsteemi füüsilised kettad ja esitab operatsioonisüsteemile loogilised köited. See abstraktsioonikiht võimaldab salvestusressursside paindlikumat haldamist.Köitegrupid ja Füüsilised Köited:Füüsilised Köited (PV - Physical Volumes): Füüsilised kettad või partitsioonid on LVM-i seadistuses tunnustatud kui füüsilised köited.Köitegrupid (VG - Volume Groups): Füüsilised köited on grupeeritud köitegruppidesse. Köitegrupp võib koosneda ühest või mitmest füüsilisest köitest.Loogilised Köited:Loomine: Loogilised köited (LV - Logical Volumes) luuakse köitegruppides. Nad esindavad köitegrupi salvestusmahtu.Muudetav suurus: Üks LVM-i põhijooni on võime loogiliste köidete suurust dünaamiliselt muuta vastavalt salvestusvajadustele.Momentvõtte tegemine:LVM toetab momentvõtteid, mis võimaldavad loogilise köite olekut teatud ajahetkel jäädvustada. See on kasulik varundamiseks või süsteemi eelmisele olekule tagasi viimiseks konfiguratsioonivea või süsteemirikke korral.Ribastamine ja Peegeldamine:Nagu RAID, toetab LVM andmete ribastamist ja peegeldamist mitme ketta vahel, et parandada vastavalt jõudlust ja reduntdantsust.Andmemigratsioon:LVM võimaldab andmeblokkide migratsiooni ühelt füüsiliselt kettalt teisele ilma teenuse katkestuseta.Valige õiged väited:
+- LVM abstraktseb süsteemi füüsilised kettad ja esitab operatsioonisüsteemile loogilised köited.
+- Köitegrupp võib koosneda ühest või mitmest füüsilisest köitest.
+- Üks LVM-i põhijooni on võime loogiliste köidete suurust dünaamiliselt muuta.
+- Nagu RAID, toetab LVM andmete ribastamist ja peegeldamist, et parandada jõudlust ja reduntdantsust
+
+Kaaluge järgmist Intel Optane püsimälu kokkuvõtet:Intel Optane põhineb 3D XPoint tehnoloogial, mis ületab lõhe traditsioonilise DRAM-i ja NAND-välkmälu vahel, pakkudes mõlema eeliseid. Optane on kiirem kui NAND SSD-d, kuid aeglasem kui DRAM. See on eriti vastupidav ning toetab palju lugemis- ja kirjutamistsükleid. Optane on saadaval erinevates versioonides: mälu, SSD ja andmekeskuste püsimälu. Erinevalt DRAM-ist on 3D XPoint püsiv ja säilitab andmed ilma toiteta. See sobib eriti andmebaasi ja analüütika töökoormusteks, andmemahukate ülesannete kiirendamiseks ja süsteemide üldise jõudluse parandamiseks.Valige õiged väited:
+- Intel Optane SSD-d on eriti sobilikud andmekeskustes ja tööjaamades kasutamiseks, kus on vaja suurt jõudlust.
+- Intel Optane mälumoodulid saavad toimida vahemäluna, parandades tavapäraste kõvaketaste või NAND SSD-de reageerimisvõimet
+
+Test 8 - Mäluhalduse loeng
+
+Kaaluge teavet mälu ülekatte kohta; kasutage loenguslaide ja ka järgmist kokkuvõtet lektori jutust:Ülekate (Overlay)Rakendus hoiab mälus ainult osa programmist ja andmetest, mida hetkel on vaja.Kasutatakse siis, kui programm kokku on suurem kui talle antud mälu. Operatsioonisüsteemi tuge pole vaja; realiseeritav kasutaja tasemel.Näide: DOS ja suured programmidMälupiirangud, täpsemalt 640 KB tavamälu limiit.Võimaldab programmide suurust ületada olemasolevat mälu, jagades need väiksemateks osadeks, mida nimetatakse ülekateteks.Vajalikud ülekatted laaditakse käitamise ajal mällu, vahetades need vastavalt vajadusele sisse ja välja.DOS-ile Oma MäärangDOS-is (Disk Operating System) olid ülekatted eriti olulised just 640 KB tavamälu piirangu tõttu. Operatsioonisüsteem ise ei pakkunud ülekatete jaoks otsest tuge; see oli programmeerija või kompilaatori ülesanne neid hallata.Ülekate Haldus: Programmeerijad kasutasid erilisi ülekate haldureid või koodisid ülekatete haldamise rutiine käsitsi.Faili Salvestamine: Ülekatted salvestati sageli eraldi failides või kindlates segmentides täidetavas failis.Dünaamiline Laadimine: Kui teatud osa programmist oli vajalik, laaditi vastav ülekanne etteantud mälualale, asendades mis iganes seal enne oli.Käsitsi Ümberlülitus: Programmeerijal tuli hoolikalt hallata, millal iga ülekate laadida ja maha laadida, sõltuvalt programmi loogikast ja voolust.Katkestused ja Käsitlejad: Oli oluline tagada, et katkestuste käsitlejad ja muu aegkriitiline kood ei asuks ülekatetes, kuna laadimisajad võiksid mõjutada jõudlust.Ketta I/O: Arvestades, et ülekatted laaditi sageli kettalt, olid programmid, mis neid kasutasid, tundlikud ketta kiiruse suhtes. Ketta vahemälu võis seda leevendada.Puudused: Ülekatete kasutamine muutis programmid keerukamaks ja raskemini silutavaks. Samuti tegi see need sõltuvaks korrektselt rakendatud ülekate mehhanismist, olgu see siis kompilaatori või programmeerija poolt manuaalselt rakendatud.Valige õiged väited:
+- Ülekateid saab rakendada, et optimeerida mälus hõivatud ruumi.
+- DOS-i operatsioonisüsteemis on ülekatel oluline roll mälu piirangute tõttu.
+- Ülekates saab osasid programme dünaamiliselt asendada teistega.
+- Kui ülekatte strateegia on kehvasti teostatud, võib see süsteemi jõudlust oluliselt kahjustada
 Test 2 - operatsioonisüsteemide sissejuhatus jätk
 
 Märgi iga lause juurde kas see on pigem õige või pigem vale!
@@ -2269,4 +2400,72 @@ Kaaluge teavet mälu ülekatte kohta; kasutage loenguslaide ja ka järgmist kokk
 - DOS-i operatsioonisüsteemis on ülekatel oluline roll mälu piirangute tõttu.
 - Ülekates saab osasid programme dünaamiliselt asendada teistega.
 - Kui ülekatte strateegia on kehvasti teostatud, võib see süsteemi jõudlust oluliselt kahjustada
+
+Test 2 - operatsioonisüsteemide sissejuhatus jätk
+
+Valige jäegmisest nimekirjast õiged väided operatsioonisüsteemi kohta:
+- Operatsioonisüsteem aitab hallata nii riist- kui ka tarkvararessursse arvutis.
+- Üks operatsioonisüsteemi põhiülesandeid on peita ära riistvara kasutamise keerukus kasutajaprogrammide eest.
+- Operatsioonisüsteem pakub arvutiprogrammidele teenuseid, mis lihtsustavad nende täitmist.
+- Kaasaegsetes arvutites jooksevad samaaegselt paljud programmid, mida operatsioonisüsteem haldab
+
+Märgi iga lause juurde kas see on pigem õige või pigem vale!
+- Operatsioonisüsteem kaitseb kasutajaid ja programme üksteise eest. → õige
+- Operatsioonisüsteem haldab arvuti ressursse programmide vahel. → õige
+- Operatsioonisüsteem on on süsteemi tarkvara, mis haldab arvuti riist- ja tarkvararessursse ning pakub arvutiprogrammidele üldisi teenuseid → õige, Operatsioonisüsteeme jaotatakse enamasti 4 erinevasse kategooriasse. → vale
+- Operatsioonisüsteemi kasutajaliides jookseb kerneli reziimis. → vale
+- Operatsioonisüsteem pakub kõrgema taseme obstruktsioone kasutajataseme programmide lihtsustamiseks. → vale
+
+Vali, mis kümnendil operatsioonisüsteem arendati või millise kümnendi kohta kirjeldus (mõiste) käib.(Käesolev küsimus annab topeltpunktid)
+- Unix loomine → 196x, Linux → 199x
+- BSD → 197x
+- Multics → 196x
+- Android → 2000+
+- GNU projekt → 198x
+- SunOS → 198x
+- "operatsioonisüsteemi" kontseptsiooni kujunemine → 195x
+
+Test 7 - Salvestusseadmete loeng
+
+Kasutage liideste kohta lisa materjalid:IDE vs. SATANVMe vs. M.2 vs. SATASATA vs. NVMeValige õiged väited:
+- IDE andmesiirde kiirus on madalam kui SATA esimese põlvkonna andmesiirde kiirus
+- NVMe draiver on spetsiaalselt mõeldud SSD-dele välkmälu tehnoloogiaga, erinevalt SATA AHCI draiveritest, mis on mõeldud kõvaketastele (HDD) spinn-tehnoloogiaga
+- NVMe draivid on kiiremad kui SATA draivid, isegi kui mõlemad SSD-d on M.2 vormingus​
+- SATA esimese põlvkonna andmesiirde kiirus on 1.2 Gbit/s (150 MB/s)​
+
+Kaaluge järgmist ketta pöörduste planeerimise kokkuvõtet:Operatsioonisüsteem on vastutav kettapöörduste optimeerimise eest, et suurendada läbilaskevõimet ja vähendada viivitust.Kaks olulist tegurit pöördusajal:Otsimisaeg: Aeg, mis kulub sõltuvalt sellest, kui kaugele pead tuleb liigutada soovitud raja jõudmiseks.Pöörlemisviivitus: Aeg, mis kulub soovitud kettasektori viimiseks lugemis-/kirjutuspea alla, keskmiselt pool pööret.Maksimaalne läbilaskevõime sõltub kettaseadmest.Operatsioonisüsteem soovib vähendada liigset positsioneerimist, et läbilaskevõime oleks maksimumi lähedal.Kui meil on ketta järjekorras kogunenud päringud teatud sektoritele, millises järjekorras neid teenindada, et viivitus (lugemispea poolt läbitud vahemaa) oleks võimalikult väike?Klassikalised Ketta Pöörduste Planeerimise AlgoritmidFCFS (First Come First Served): Päringud teenindatakse vastavalt saabumise järjekorrale.SSTF (Shortest Seek Time First): Sarnane SJF (Shortest Job Next) protsessiplaneerijaga, kuid pole optimaalne, kuna võib põhjustada näljutamist.SCAN (tuntud ka kui elevaatorialgoritm): Pea liigub ketta ühest äärest teise, teenindades tee peal olevaid päringuid.LOOK: Pea liigub ainult kuni kaugema päringuni igas suunas, mitte ketta ääreni. Keskmised sektorid teenindatakse kiiremini.C-SCAN: Sarnane SCAN-iga, kuid tagasiteel päringuid ei teenindata.C-LOOK: Sarnane LOOK-iga, kuid pea liigub ainult kuni kaugema päringuni, mitte ketta ääreni. Päringute teenindamise ooteajad on ühtlasemad.Ketta Pöörduste Planeerimise Algoritmid LinuxisNOOP: Lihtsalt ühendab päringud.Deadline: Määrab prioriteediklassid vastavalt interaktiivsusele, võideldes näljutamise vastu tähtaegadega.CFQ (Completely Fair Queuing): Päringud jagatakse klassidesse ja võetakse klassidest vaheldumisi; suudab arvestada I/O prioriteetidega.Mitme Järjekorra Variandid: MQ-Deadline, Kyber, BFQ - käitlevad mitut järjekorda.Olenemata operatsioonisüsteemist: Mitme järjekorrahalduse kasutamine üksteise otsas võib protsessi hoopis aeglustada.Valige õiged väited:
+- Kyber on üks Linuxi kettapöörduste planeerimise algoritmidest, mis toetab mitme järjekorra haldamist.
+- Läbilaskevõime suurendamine ja viivituse vähendamine on kettapöörduste planeerimise peamised eesmärgid.
+- LOOK-algoritm ja C-LOOK-algoritm on optimeeritud keskel asuvate sektorite kiiremaks teenindamiseks.
+- C-SCAN-algoritm teenindab päringuid ainult edasisuunas, mitte tagasiteel
+
+Kaaluge järgmist ketta ette valmistamise kokkuvõtet:Madala taseme formaatimine, mida tuntakse ka füüsilise formaatimisena, viitab ketta radade sektorite märkimise protsessile. Seda protsessi viib tavaliselt läbi ketaste tootja ja tavaliselt ei ole see operatsioonisüsteemile nähtav. See loob ketta baasandmestruktuurid, muutes selle kõrgema taseme formaatimiseks valmis. Partitsioneerimine:Partitsioneerimine hõlmab ketta jagamist mitmeks loogiliseks sektsiooniks ehk partitsioonideks, mida saab sõltumatult hallata. MBR (Master Boot Record) partitsioonitabelid asuvad ketta alguses ja saavad adresseerida kuni 2TB salvestusruumi. GPT (GUID Partition Table) on mõeldud suuremate kui 2TB ketaste jaoks ja partitsioonitabel asub ketta lõpus​1​. Loogiline formaatimine:Loogiline formaatimine, mida tuntakse ka failisüsteemi loomisena, hõlmab failisüsteemi struktuuri seadistamist partitsioonis või kettal, mis hõlmab vajalike andmestruktuuride loomist failide salvestamiseks ja hankimiseks. Bootloaderi paigaldamine:Bootloaderid on olulised komponendid, mis aitavad operatsioonisüsteemi käivitada. Need paigaldatakse süsteemi reserveeritud partitsiooni ja need leiavad ning laadivad operatsioonisüsteemi tuuma mällu. Bootloaderi paigaldamine hõlmab tavaliselt sihtketta ja partitsiooni valimist ning bootloaderi koodi määratud asukoha (MBR, bootsector, ESP partitsioon) paigaldamist.Valige õiged väited:
+- Madala taseme formaatimine viitab ketta radade sektorite märkimise protsessile.
+- MBR partitsioonitabelid asuvad ketta alguses ja saavad adresseerida kuni 2TB salvestusruumi.
+- GPT on mõeldud suuremate kui 2TB ketaste jaoks.
+- Bootloaderid aitavad operatsioonisüsteemi käivitada, laadides operatsioonisüsteemi tuuma mällu
+
+Valige õiged väited:
+- RAID 3 ja RAID 4 erinevad oma riba suuruste ja paarsuse käsitlemise poolest.
+- Riistvara RAID vähendab tavaliselt CPU koormust, kuna sellel on pühendatud protsessor ja vahemälu.
+- RAID 1+0 ehk RAID 10 kombinatsioon pakub ribastamist ja peegeldamist, mis parandab nii jõudlust kui ka reduntdantsust.
+- Tarkvaraline RAID on sageli kergemini hallatav ja pakub vähem ühilduvusprobleeme võrreldes riistvaralise RAID-iga
+
+Kaaluge järgmist LVM kokkuvõtet:LVM (Logical Volume Management - Loogiline Köite Haldus) on kaasaegse salvestushalduse oluline aspekt, mis võimaldab salvestusressursside paindlikumat ja tõhusamat kasutamist. Lähtuvalt lõigust LVM-i kohta, siin on mõned olulised punktid:Abstraktsioon: LVM abstraktseb süsteemi füüsilised kettad ja esitab operatsioonisüsteemile loogilised köited. See abstraktsioonikiht võimaldab salvestusressursside paindlikumat haldamist.Köitegrupid ja Füüsilised Köited:Füüsilised Köited (PV - Physical Volumes): Füüsilised kettad või partitsioonid on LVM-i seadistuses tunnustatud kui füüsilised köited.Köitegrupid (VG - Volume Groups): Füüsilised köited on grupeeritud köitegruppidesse. Köitegrupp võib koosneda ühest või mitmest füüsilisest köitest.Loogilised Köited:Loomine: Loogilised köited (LV - Logical Volumes) luuakse köitegruppides. Nad esindavad köitegrupi salvestusmahtu.Muudetav suurus: Üks LVM-i põhijooni on võime loogiliste köidete suurust dünaamiliselt muuta vastavalt salvestusvajadustele.Momentvõtte tegemine:LVM toetab momentvõtteid, mis võimaldavad loogilise köite olekut teatud ajahetkel jäädvustada. See on kasulik varundamiseks või süsteemi eelmisele olekule tagasi viimiseks konfiguratsioonivea või süsteemirikke korral.Ribastamine ja Peegeldamine:Nagu RAID, toetab LVM andmete ribastamist ja peegeldamist mitme ketta vahel, et parandada vastavalt jõudlust ja reduntdantsust.Andmemigratsioon:LVM võimaldab andmeblokkide migratsiooni ühelt füüsiliselt kettalt teisele ilma teenuse katkestuseta.
+- LVM-i abstraktsioon võimaldab süsteemi füüsiliste ketaste esitamist operatsioonisüsteemile kui loogilised köited.
+- LVM võimaldab loogiliste köidete olekut teatud ajahetkel jäädvustada momentvõtte abil.
+- Köitegruppide sees saab luua loogilisi köiteid, mis esindavad köitegrupi salvestusmahtu.
+- LVM toetab andmete ribastamist ja peegeldamist, et parandada jõudlust ja tagada andmete reduntdantsus
+
+Mõelge illustratsioonile, milline transistori värav see on?
+- NOR
+
+Test 8 - Mäluhalduse loeng
+
+Kaaluge teavet mälu ülekatte kohta; kasutage loenguslaide ja ka järgmist kokkuvõtet lektori jutust:Ülekate (Overlay)Rakendus hoiab mälus ainult osa programmist ja andmetest, mida hetkel on vaja.Kasutatakse siis, kui programm kokku on suurem kui talle antud mälu. Operatsioonisüsteemi tuge pole vaja; realiseeritav kasutaja tasemel.Näide: DOS ja suured programmidMälupiirangud, täpsemalt 640 KB tavamälu limiit.Võimaldab programmide suurust ületada olemasolevat mälu, jagades need väiksemateks osadeks, mida nimetatakse ülekateteks.Vajalikud ülekatted laaditakse käitamise ajal mällu, vahetades need vastavalt vajadusele sisse ja välja.DOS-ile Oma MäärangDOS-is (Disk Operating System) olid ülekatted eriti olulised just 640 KB tavamälu piirangu tõttu. Operatsioonisüsteem ise ei pakkunud ülekatete jaoks otsest tuge; see oli programmeerija või kompilaatori ülesanne neid hallata.Ülekate Haldus: Programmeerijad kasutasid erilisi ülekate haldureid või koodisid ülekatete haldamise rutiine käsitsi.Faili Salvestamine: Ülekatted salvestati sageli eraldi failides või kindlates segmentides täidetavas failis.Dünaamiline Laadimine: Kui teatud osa programmist oli vajalik, laaditi vastav ülekanne etteantud mälualale, asendades mis iganes seal enne oli.Käsitsi Ümberlülitus: Programmeerijal tuli hoolikalt hallata, millal iga ülekate laadida ja maha laadida, sõltuvalt programmi loogikast ja voolust.Katkestused ja Käsitlejad: Oli oluline tagada, et katkestuste käsitlejad ja muu aegkriitiline kood ei asuks ülekatetes, kuna laadimisajad võiksid mõjutada jõudlust.Ketta I/O: Arvestades, et ülekatted laaditi sageli kettalt, olid programmid, mis neid kasutasid, tundlikud ketta kiiruse suhtes. Ketta vahemälu võis seda leevendada.Puudused: Ülekatete kasutamine muutis programmid keerukamaks ja raskemini silutavaks. Samuti tegi see need sõltuvaks korrektselt rakendatud ülekate mehhanismist, olgu see siis kompilaatori või programmeerija poolt manuaalselt rakendatud.Valige õiged väited:
+- Ülekates võib üks programmi osa mällu sattuda ainult siis, kui seda konkreetset osa on vaja.
+- Ülekateid kasutades on võimalik luua programme, mis on suuremad kui mälu, mis neile eraldatud on.
+- Mällu laaditavad ülekate osad võivad sõltuda programmi jooksutamise ajal toimuvast.
+- DOS kasutas ülekatete strateegiat, et võidelda väikeste mäluvahemikega
+
 
